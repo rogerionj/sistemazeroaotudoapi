@@ -31,7 +31,7 @@ public class UsuarioEntity {
 	
 	@Column(nullable = false)
 	private String email;
-
+	
 	public UsuarioEntity(UsuarioDTO usuario) {
 		BeanUtils.copyProperties(usuario, this);
 	}
