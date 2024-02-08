@@ -1,4 +1,4 @@
-INSERT INTO NPL_USUARIO (ID, NOME, LOGIN, SENHA, EMAIL) VALUES (1, 'Rogério', 'rogerio', '1234','rogerionj@gmail.com');
+INSERT INTO NPL_USUARIO (ID, NOME, LOGIN, SENHA, EMAIL, SITUACAO) VALUES (1, 'Rogério', 'rogerio', '1234','rogerionj@gmail.com', 'ATIVO');
 
 ALTER SEQUENCE NPL_USUARIO_ID_SEQ RESTART WITH 2;
 
