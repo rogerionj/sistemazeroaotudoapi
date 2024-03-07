@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.napoleao.projeto.dto.AuthenticationDTO;
+import br.com.napoleao.projeto.dto.UsuarioDTO;
 import br.com.napoleao.projeto.service.AuthService;
+import br.com.napoleao.projeto.service.UsuarioService;
 
 @RestController
 @RequestMapping("/auth")
@@ -19,10 +21,17 @@ public class AuthController {
 	@Autowired
 	private AuthService authService;
 	
+	@Autowired
+	private UsuarioService usuarioService;
+	
 	@PostMapping(value = "/login")
 	public ResponseEntity<?> login(@RequestBody AuthenticationDTO authDto){
 		return ResponseEntity.ok(authService.login(authDto));
 	}
 	
+	@PostMapping(value = "/novoUsuario")
+	public void inserirNovoUsuario(@RequestBody UsuarioDTO novoUsuario){
+		usuarioService.inserirNovoUsuario(novoUsuario);
+	}
 	
 }
